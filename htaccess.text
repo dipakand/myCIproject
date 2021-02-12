@@ -1,0 +1,9 @@
+RewriteEngine On
+#SetEnvIf Host www.mysite.ca$ CI_ENV=production
+#SetEnvIf Host test.mysite.ca$ CI_ENV=testing
+#SetEnvIf Host localhost$ CI_ENV=development
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
